@@ -1,0 +1,319 @@
+/* Reset styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: black;
+}
+
+/* Full-screen image */
+#mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  display: block;
+  position: absolute;
+}
+.hidden {
+  display: none!important;
+}
+
+/* Back button styling */
+#backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Clickable room area */
+#roomClickable {
+  position: absolute;
+  top: 53%;
+  left: 52%;
+  width: 200px;
+  height: 480px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(0, 0, 0, 0);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 5;
+
+  clip-path: polygon(0% 2.5%, 100% 0%, 100% 95%, 0% 90%);
+}
+
+#roomClickable:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Gather button */
+#gatherButton {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+  background-color: rgba(0, 128, 255, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#gatherButton:hover {
+  background-color: rgba(0, 128, 255, 1);
+}
+
+/* Video Overlay Styling */
+#videoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(0, 0, 0, 0.9); /* Dim background */
+  display: flex; /* Default display when visible */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  z-index: 20; /* Ensure it appears above other elements */
+}
+
+/* Make the video visible and properly centered */
+#videoOverlay video {
+  width: 80%; /* Reduce the size */
+  max-width: 800px; /* Limit the width */
+  max-height: 450px; /* Limit the height */
+  margin: auto;
+  display: block;
+  background-color: black; /* Fallback background */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Optional shadow */
+}
+
+/* Close button */
+#closeVideo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 30; /* Ensure it appears above the overlay */
+}
+
+/* New Button Styling: Bottom Middle */
+#mapButton {
+  position: absolute;
+  top: 70%;
+  left: 52%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+  background-color: rgba(0, 128, 255, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+
+
+}
+
+#mapButton:hover {
+  background-color: rgba(0, 128, 255, 1);
+}
+
+/* Image Overlay Styling */
+#imageOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  background-color: rgba(0, 0, 0, 0.8); /* Dim background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20; /* Ensure it appears above other elements */
+}
+
+/* Overlay Image */
+#overlayImage {
+  max-width: 80%; /* Limit the width */
+  max-height: 80%; /* Limit the height */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Optional shadow */
+}
+
+/* Close button for Image Overlay */
+#closeImage {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 30; /* Ensure it appears above the overlay */
+}
+
+/* Points of Interest (POIs) */
+.poi {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 25;
+}
+
+.poi:hover {
+  background-color: orange;
+  transform: scale(1.2);
+}
+
+/* Tooltip Styling (Optional) */
+.poi[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%; /* Above the POI */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 50;
+}
+
+/* Front Line Clickable Area */
+#frontLineClickable {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+  background-color: rgba(0, 128, 255, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Shape of the area */
+}
+
+#frontLineClickable:hover {
+  background-color: rgba(255, 255, 255, 0.76); /* Add hover effect for visibility */
+}
+
+#threeWaysButton {
+  position: absolute;
+  bottom: 75%; /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+  background-color: rgba(184, 188, 193, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#threeWaysButton:hover {
+  background-color: rgba(0, 128, 255, 1);
+}
+
+#decodeImageOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Dim background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20; /* Ensure it appears above other elements */
+}
+
+#decodeOverlayImage {
+  max-width: 80%;
+  max-height: 80%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Optional shadow */
+}
+
+#closeDecodeImage {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 30; /* Ensure it appears above the overlay */
+}
+
+#middleDecodeButton {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust positioning */
+  font-size: 18px;
+  color: white;
+  background-color: rgba(184, 188, 193, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#middleDecodeButton:hover {
+  background-color: rgba(0, 128, 255, 1);
+}
+
+#bottomDecodeButton {
+  position: absolute;
+  top: 85%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust positioning */
+  font-size: 18px;
+  color: white;
+  background-color: rgba(184, 188, 193, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#bottomDecodeButton:hover {
+  background-color: rgba(0, 128, 255, 1);
+}

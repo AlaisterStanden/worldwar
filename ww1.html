@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Room</title>
+  <link rel="stylesheet" href="ww1.css">
+</head>
+<body>
+<div id="backButton" class="hidden">&larr; Back</div>
+<img id="mainImage" src="pictures/officersQuarters.webp" alt="Officer Quarters">
+
+<div id="roomClickable"></div>
+<div id="gatherButton" class="hidden">Briefing</div>
+
+<!-- Video Overlay -->
+<div id="videoOverlay" class="hidden">
+  <video id="briefingVideo" controls>
+    <source src="video/christmas-2024v3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button id="closeVideo">X</button>
+</div>
+
+<div id="mapButton" class="hidden">Map</div>
+
+<div id="imageOverlay" class="hidden">
+  <img id="overlayImage" src="pictures/somme.jpg" alt="Map Overlay">
+  <button id="closeImage">X</button>
+
+  <!-- Points of Interest -->
+  <div class="poi" id="poi1" style="top: 36%; left: 44%;" title="1. Listening Device"></div>
+  <div class="poi" id="poi2" style="top: 50%; left: 48.5%;" title="2. Main Wire"></div>
+  <div class="poi" id="poi3" style="top: 70%; left: 47%;" title="3. Relay Circuit"></div>
+</div>
+
+<div id="frontLineClickable" class="clickable">
+
+  To the Front</div>
+
+<div id="threeWaysButton" class="hidden">Decode Message</div>
+<div id="decodeImageOverlay" class="hidden">
+  <img id="decodeOverlayImage" src="pictures/germanvoiceYT.PNG" alt="Decoded Image">
+  <button id="closeDecodeImage">X</button>
+</div>
+
+<div id="middleDecodeButton" class="hidden">Repair Wire</div>
+<div id="bottomDecodeButton" class="hidden">Rebuild relay</div>
+
+
+
+<script src="ww1.js"></script>
+</body>
+</html>
