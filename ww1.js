@@ -13,7 +13,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeDecodeImage = document.getElementById("closeDecodeImage");
     const middleDecodeButton = document.getElementById("middleDecodeButton");
     const bottomDecodeButton = document.getElementById("bottomDecodeButton");
+    const poi1 = document.getElementById("poi1");
+    const poi2 = document.getElementById("poi2");
+    const poi3 = document.getElementById("poi3");
+    const photoDisplay = document.getElementById("photoDisplay");
+    const photoImage = document.getElementById("photoImage");
+    const closePhoto = document.getElementById("closePhoto");
 
+    const poiPhotos = {
+        poi1: "pictures/clue 1v2.jpg",
+        poi2: "pictures/clue1.png",
+        poi3: "pictures/clue1.pdf"
+    };
+
+    const showPhoto = (poiId) => {
+        photoImage.src = poiPhotos[poiId];
+        photoDisplay.classList.remove("hidden");
+    };
+
+    poi1.addEventListener("click", () => showPhoto("poi1"));
+    poi2.addEventListener("click", () => showPhoto("poi2"));
+    poi3.addEventListener("click", () => showPhoto("poi3"));
+
+    // Close button functionality
+    closePhoto.addEventListener("click", () => {
+        photoDisplay.classList.add("hidden");
+        photoImage.src = ""; // Clear the photo
+    });
 
     const phrases = {
         "attack": "defxi",
@@ -129,3 +155,4 @@ document.addEventListener("DOMContentLoaded", () => {
         imageOverlay.classList.add("hidden"); // Hide the image overlay
     });
 });
+
