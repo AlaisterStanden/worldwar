@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const photoDisplay = document.getElementById("photoDisplay");
     const photoImage = document.getElementById("photoImage");
     const closePhoto = document.getElementById("closePhoto");
+    const fourthButton = document.getElementById("fourthButton");
 
     const poiPhotos = {
         poi1: "pictures/clue 1v2.jpg",
@@ -95,6 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
         threeWaysButton.classList.remove("hidden"); // Show the original Decode button
         middleDecodeButton.classList.remove("hidden"); // Show the new middle Decode button
         bottomDecodeButton.classList.remove("hidden");
+        fourthButton.classList.remove("hidden");
+        frontLineClickable.classList.add("hidden");
     });
 
     // Handle back button click
@@ -107,6 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
         threeWaysButton.classList.add("hidden"); // Hide the original Decode button
         middleDecodeButton.classList.add("hidden"); // Hide the new middle Decode button
         bottomDecodeButton.classList.add("hidden");
+        fourthButton.classList.add("hidden");
+        frontLineClickable.classList.remove("hidden");
     });
 
     // Handle Decode Message button click
@@ -130,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         backButton.classList.remove("hidden"); // Show the back button
         gatherButton.classList.remove("hidden"); // Show the gather button
         mapButton.classList.remove("hidden"); // Show the map button
+        frontLineClickable.classList.add("hidden");
     });
 
     // Handle gather button click
